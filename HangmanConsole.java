@@ -43,24 +43,24 @@ public class HangmanConsole {
     // Declare a variable that holds the most recently guessed character
     char guessChar;
 
-    // Count the number of letters that have been revealed. The game is over
-    // once revealedCount <= 0, i.e. the counter is zero or smaller.
-    int revealedCount = secretChars.length;
+    // Count the number of letters that have been revealed.
+    // The game is over once revealedCount >= secretChars.length.
+    int revealedCount = 0;
 
     // Integer variable to store the number of letters  
-    // which have been correctly guessed during the game.
-    int replacedCount;
+    // which have been correctly guessed at a single round.
+    int occurrenceCount;
 
     // Loop which iterates at least once
     do {
       guessChar = console.readChar("Guess a letter: ");
 
       // Keep track what letters have been correctly guessed.
-      // Only revealedCount OR guessCount decrements (never both)
-      replacedCount = copyChar(secretChars, guessedChars, guessChar);
-      if (replacedCount > 0) {
-        // Decrement counter by the number of newly revealed letters 
-        revealedCount -= replacedCount;
+      // Only the value of revealedCount OR guessCount changes (never both)
+      occurrenceCount = copyChar(secretChars, guessedChars, guessChar);
+      if (occurrenceCount > 0) {
+        // Increment counter by the number of newly revealed letters 
+        revealedCount += occurrenceCount;
       } else {
         // One less guess available
         guessCount--;
@@ -76,7 +76,7 @@ public class HangmanConsole {
       // Loop stops (i.e. game is over) if either:
       //   i)  the player has no more guesses available OR
       //   ii) all letters have been revealed
-    } while (guessCount > 0 && revealedCount > 0);
+    } while (guessCount > 0 && revealedCount < secretChars.length);
 
     if (guessCount == 0) {
       console.println("Game over! You are dead!");
