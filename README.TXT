@@ -9,6 +9,8 @@ Furthermore, the use of arrays demonstrates the differences between "call by
 value" and "call by reference". The latter could cause procedures and functions
 to have side effects. Finally, there is an auxiliary testing class which
 features rudimentary automated unit tests which can help you identify bugs.
+However, it does not catch all bugs. In fact, there is at least one serious
+error in the program logic that allows cheating! Can you find this exploit?
 
 Game example:
 
