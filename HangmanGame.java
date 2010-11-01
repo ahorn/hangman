@@ -40,7 +40,7 @@ public class HangmanGame {
     }
     
     // Invoke another procedure to trigger certain functionality, i.e. play the game
-    play(secret);
+    playGame(secret);
   }
 
   /**
@@ -49,7 +49,7 @@ public class HangmanGame {
    * @param secret
    *          sequence of letters the player should guess as part of the game
    */
-  public static void play(String secret) {
+  public static void playGame(String secret) {
     HangmanConsole consoleGame = new HangmanConsole(console);
     
     // Declare and assign to a variable which can hold a sequence

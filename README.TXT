@@ -58,7 +58,7 @@ Instructions if you are new to Java:
 1) Open the Hangman project in BlueJ
 2) Compile the project (Ctrl + K)
 3) Right-click on the HangmanGame rectangle
-4) Choose the menu option "void play(String secret)"
+4) Choose the menu option "void playGame(String secret)"
 5) A dialog window opens; enter a string such as "oxford" with double quotes.
 
 Enjoy modifying the code.
